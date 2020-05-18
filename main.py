@@ -7,6 +7,12 @@ import os.path
 import pickle
 import pandas as pd 
 
+def get_file(directory, pairs_name, test_name):
+    with open(os.path.join(directory, pairs_name), "rb") as p:
+        pairs = pickle.load(p)
+    with open(os.path.join(directory, test_name), "rb") as t:
+        test = pickle.load(t)
+    return pairs, test 
 def replace_substr(sentence, pairs):
     for pair in pairs:
         sentence = sentence.replace(pair, pair[0]+' '+pair[1])
@@ -14,10 +20,7 @@ def replace_substr(sentence, pairs):
 
 if __name__=='__main__':
     directory = './data/'
-    pairs_file = "pairs.txt"
-    test_file = "test.txt"
-    pairs_path = os.path.join(directory, pairs_file)
-    test_path = os.path.join(directory, test_file)
-    with open(pairs_path, "rb") as p:
-        pairs = pickle.load(p)
-    test = pd.read_csv(file_path, sep = '|', header = None, encoding='utf8')
+    pairs_name = "pairs.txt"
+    test_name = "test.txt"
+    pairs, test = get_file(directory, pairs_name, test_name)
+    

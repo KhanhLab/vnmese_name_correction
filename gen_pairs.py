@@ -22,7 +22,7 @@ class Processor:
         pairs = set(pairs)
         pairs.difference_update(cons_comb)
         return pairs
-    
+
 if __name__=='__main__':
     process = Processor()
     pairs = process.gen_pairs(process.cons, process.cons_comb)

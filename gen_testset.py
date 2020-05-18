@@ -22,8 +22,8 @@ if __name__=='__main__':
     directory = './data/'
     name_file = "name_result.txt"
     test_file = "test.txt"
-    file_path = os.path.join(directory, name_file)
+    name_path = os.path.join(directory, name_file)
     test_path = os.path.join(directory, test_file)
-    test = get_data(file_path)
+    test = get_data(name_path)
     with open(test_path, "wb") as p:
         pickle.dump(test, p)
