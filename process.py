@@ -2,7 +2,6 @@
 Created on 2020-05-15
 
 """
-import numpy as np
 import itertools
 import codecs
 import os.path
