@@ -25,5 +25,7 @@ if __name__=='__main__':
     name_path = os.path.join(directory, name_file)
     test_path = os.path.join(directory, test_file)
     test = get_data(name_path)
+    if not os.path.isdir(directory):
+        os.mkdir(directory)
     with open(test_path, "wb") as p:
         pickle.dump(test, p)
