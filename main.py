@@ -26,4 +26,6 @@ if __name__=='__main__':
     # print(pairs)
     # print(test.head())
     test['FINAL_PR'] = test['PR'].apply(replace_substr, args = (pairs,))
+    test['ARS'] = test['GT'] == test['PR']
     test['CHECK'] = test['GT'] == test['FINAL_PR']
+    test.to_excel('test.xlsx', index = 0)
