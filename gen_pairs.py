@@ -10,9 +10,9 @@ import pickle
 
 class Processor:
     def __init__(self):
-        self.vows = ["a", "ă", "â", "e", "ê", "i", "y", "o", "ô", "ơ", "u", "ư"]
-        self.cons = ["b", "c", "d", "đ", "g", "h", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x"]
-        self.cons_comb = ["ch", "gh", "kh", "ng", "ngh", "nh", "ph", "th", "tr", "gi"]
+        self.vows = ["A", "Ă", "Â", "E", "Ê", "I", "Y", "O", "Ô", "Ơ", "U", "Ư"]
+        self.cons = ["B", "C", "D", "Đ", "G", "H", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "X"]
+        self.cons_comb = ["CH", "GH", "KH", "NG", "NGH", "NH", "PH", "TH", "TR", "GI"]
 
     def gen_pairs(self, cons, cons_comb):
         pairs = []

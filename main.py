@@ -23,4 +23,7 @@ if __name__=='__main__':
     pairs_name = "pairs.txt"
     test_name = "test.txt"
     pairs, test = get_file(directory, pairs_name, test_name)
-    
+    # print(pairs)
+    # print(test.head())
+    test['FINAL_PR'] = test['PR'].apply(replace_substr, args = (pairs,))
+    test['CHECK'] = test['GT'] == test['FINAL_PR']

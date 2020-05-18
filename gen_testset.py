@@ -11,10 +11,10 @@ def get_data(file_path):
     names = pd.read_csv(file_path, sep = '|', header = None, encoding='utf8')
     GT = names[1].map(lambda x: x.replace('GT=','').strip())
     PR = names[2].map(lambda x: x.replace('PR=','').strip())
-    CHECK = GT == PR
+    # CHECK = GT == PR
     data = pd.concat([GT,
                         PR, 
-                        CHECK
+                        # CHECK
                        ], axis=1).rename(columns ={1: 'GT', 2:'PR', 0:'CHECK'})
     return data
 
