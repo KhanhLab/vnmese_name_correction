@@ -27,11 +27,10 @@ if __name__=='__main__':
     process = Processor()
     pairs = process.gen_pairs(process.cons, process.cons_comb)
     directory = './data/'
-    pairs_name = "pairs.txt"
-    pairs_path = os.path.join(directory, pairs_name)
+    pairs_file = "pairs.txt"
     if not os.path.isdir(directory):
         os.mkdir(directory)
-    with open(pairs_path, "wb") as p:
+    with open(os.path.join(directory, pairs_file), "wb") as p:
         pickle.dump(pairs, p)
 
     
