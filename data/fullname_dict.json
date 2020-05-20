@@ -721,13 +721,6 @@
         "gender": ""
     },
     {
-        "first_name": "Hoàng",
-        "last_name": "Nguyễn Vuõ Lam",
-        "full_name": "Nguyễn Vuõ Lam Hoàng",
-        "last_name_group": "Nguyễn",
-        "gender": ""
-    },
-    {
         "first_name": "Thuận",
         "last_name": "Nguyễn Hoà",
         "full_name": "Nguyễn Hoà Thuận",
@@ -9604,13 +9597,6 @@
         "gender": ""
     },
     {
-        "first_name": "Student",
-        "last_name": "",
-        "full_name": "Student",
-        "last_name_group": "Student",
-        "gender": ""
-    },
-    {
         "first_name": "Hùng",
         "last_name": "Lý Ngọc",
         "full_name": "Lý Ngọc Hùng",
@@ -11270,13 +11256,6 @@
         "gender": ""
     },
     {
-        "first_name": "Döông",
-        "last_name": "Trần Văn",
-        "full_name": "Trần Văn Döông",
-        "last_name_group": "Trần",
-        "gender": ""
-    },
-    {
         "first_name": "Lâm",
         "last_name": "Phạm Tùng",
         "full_name": "Phạm Tùng Lâm",
@@ -11351,13 +11330,6 @@
         "last_name": "Nông Văn",
         "full_name": "Nông Văn Hoaønh",
         "last_name_group": "Nông",
-        "gender": ""
-    },
-    {
-        "first_name": "Döông",
-        "last_name": "Nguyễn Minh",
-        "full_name": "Nguyễn Minh Döông",
-        "last_name_group": "Nguyễn",
         "gender": ""
     },
     {
@@ -11472,13 +11444,7 @@
         "last_name_group": "Phạm",
         "gender": ""
     },
-    {
-        "first_name": "Laäp",
-        "last_name": "Ñoã Văn",
-        "full_name": "Ñoã Văn Laäp",
-        "last_name_group": "Ñoã",
-        "gender": ""
-    },
+
     {
         "first_name": "Laøo",
         "last_name": "Nguyễn Vieät",
@@ -11512,13 +11478,6 @@
         "last_name": "Phạm Thanh",
         "full_name": "Phạm Thanh Löông",
         "last_name_group": "Phạm",
-        "gender": ""
-    },
-    {
-        "first_name": "Linh",
-        "last_name": "Ñoã Nhaát",
-        "full_name": "Ñoã Nhaát Linh",
-        "last_name_group": "Ñoã",
         "gender": ""
     },
     {
@@ -23045,20 +23004,7 @@
         "last_name_group": "Trương",
         "gender": ""
     },
-    {
-        "first_name": "Khoâi",
-        "last_name": "Döông Töû",
-        "full_name": "Döông Töû Khoâi",
-        "last_name_group": "Döông",
-        "gender": ""
-    },
-    {
-        "first_name": "Kieàu",
-        "last_name": "Ñinh Thị Ngọc",
-        "full_name": "Ñinh Thị Ngọc Kieàu",
-        "last_name_group": "Ñinh",
-        "gender": ""
-    },
+
     {
         "first_name": "Khaùnh",
         "last_name": "Phạm Long",
@@ -23081,24 +23027,10 @@
         "gender": ""
     },
     {
-        "first_name": "Vuõ",
-        "last_name": "Lê Tuaán",
-        "full_name": "Lê Tuaán Vuõ",
-        "last_name_group": "Lê",
-        "gender": ""
-    },
-    {
         "first_name": "Lieân",
         "last_name": "Đỗ Kim",
         "full_name": "Đỗ Kim Lieân",
         "last_name_group": "Đỗ",
-        "gender": ""
-    },
-    {
-        "first_name": "Chaún",
-        "last_name": "Buøi Thị",
-        "full_name": "Buøi Thị Chaún",
-        "last_name_group": "Buøi",
         "gender": ""
     },
     {
@@ -23113,13 +23045,6 @@
         "last_name": "Nguyễn Hoàng",
         "full_name": "Nguyễn Hoàng Ba",
         "last_name_group": "Nguyễn",
-        "gender": ""
-    },
-    {
-        "first_name": "Lanh",
-        "last_name": "Huøynh Thị",
-        "full_name": "Huøynh Thị Lanh",
-        "last_name_group": "Huøynh",
         "gender": ""
     },
     {
@@ -23183,13 +23108,6 @@
         "last_name": "Mai Hoøang",
         "full_name": "Mai Hoøang Nhi",
         "last_name_group": "Mai",
-        "gender": ""
-    },
-    {
-        "first_name": "Thanh",
-        "last_name": "Döông Minh",
-        "full_name": "Döông Minh Thanh",
-        "last_name_group": "Döông",
         "gender": ""
     },
     {
@@ -31524,13 +31442,6 @@
         "gender": ""
     },
     {
-        "first_name": "Minh",
-        "last_name": "Vuõ Quang",
-        "full_name": "Vuõ Quang Minh",
-        "last_name_group": "Vuõ",
-        "gender": ""
-    },
-    {
         "first_name": "Như",
         "last_name": "Đặng Thị Huỳnh",
         "full_name": "Đặng Thị Huỳnh Như",
@@ -38464,13 +38375,6 @@
         "last_name": "Nguyễn Dư Duy",
         "full_name": "Nguyễn Dư Duy Khang",
         "last_name_group": "Nguyễn",
-        "gender": ""
-    },
-    {
-        "first_name": "Kbuôr",
-        "last_name": "Y- Trần Trung Nguyên",
-        "full_name": "Y- Trần Trung Nguyên Kbuôr",
-        "last_name_group": "Y-",
         "gender": ""
     },
     {
@@ -53153,14 +53057,6 @@
         "gender": ""
     },
     {
-        "first_name": "Student",
-        "last_name": "",
-        "full_name": "Student",
-        "last_name_group": "Student",
-        "gender": ""
-    },
-
-    {
         "first_name": "Thiện",
         "last_name": "Lê Hữu",
         "full_name": "Lê Hữu Thiện",
@@ -59837,13 +59733,6 @@
         "last_name": "Dư Cao",
         "full_name": "Dư Cao Tiến",
         "last_name_group": "Dư",
-        "gender": ""
-    },
-    {
-        "first_name": "Tiến",
-        "last_name": "BĂši Quang",
-        "full_name": "BĂši Quang Tiến",
-        "last_name_group": "BĂši",
         "gender": ""
     },
     {
