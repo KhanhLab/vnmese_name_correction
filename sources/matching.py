@@ -68,7 +68,6 @@ class StringMatching(object):
             scores[n] = score
 #         scores = sorted(scores.items(), key=lambda item: item[1], reverse=True)
         scores = [k for k,v in scores.items() if v == max(scores.values())]
-        for s in scores:
-            matches = [fuzz.ratio(word, unidecode(s)) for s in scores]
-            bestmatch = scores[matches.index(max(matches))]
+        matches = [fuzz.ratio(word, unidecode(s)) for s in scores]
+        bestmatch = scores[matches.index(max(matches))]
         return bestmatch
