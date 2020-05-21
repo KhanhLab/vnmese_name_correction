@@ -60,7 +60,6 @@ class StringMatching(object):
     def word_similarity(self, word):
       """		
       String Matching using Levenshtein distance	
-
       """		
       scores = []
       for n in self.last_names:
