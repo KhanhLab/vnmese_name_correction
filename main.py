@@ -31,10 +31,12 @@ def lastname_match(fullname):
     """
     Matching lastname (optional) 
     """ 
-    lastname = fullname.split(' ')[0]
+    tokens = fullname.split(' ')
+    lastname = tokens[0]
     sm = StringMatching()
     best_match = sm.word_similarity(lastname)
-    return fullname.replace(lastname, best_match)
+    tokens[0] = best_match
+    return ' '.join(tokens)
 
 if __name__=='__main__':
     tv = TiengViet()
@@ -59,4 +61,4 @@ if __name__=='__main__':
         word = vn_correct(word) # Spelling correction
         word = lastname_match(word) # Lastname matching
         print(word)
-        print('Done batch testing!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
+        print('Done testing!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
