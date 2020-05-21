@@ -4,6 +4,7 @@ Created on 2020-05-15
 """
 
 from fuzzywuzzy import fuzz
+from unidecode import unidecode
 
 class StringMatching(object):		
     def __init__(self):		
@@ -58,16 +59,16 @@ class StringMatching(object):
        'LANG', 'VIỄN', 'DƯỜNG']
         
     def word_similarity(self, word):
-      """		
-      String Matching using Levenshtein distance	
-      """		
-      scores = []
-      for n in self.last_names:
-          score = fuzz.ratio(word, n)
-          scores.append(score)
-      idx = scores.index(max(scores))
-      best_match = self.last_names[idx]
-      if len(word) == len(best_match):
-          return best_match
-      else:
-          return word
+        """
+        String Matching using Levenshtein distance
+        """
+        scores = {}
+        for n in self.last_names:
+            score = fuzz.ratio(word, n)
+            scores[n] = score
+#         scores = sorted(scores.items(), key=lambda item: item[1], reverse=True)
+        scores = [k for k,v in scores.items() if v == max(scores.values())]
+        for s in scores:
+            matches = [fuzz.ratio(word, unidecode(s)) for s in scores]
+            bestmatch = scores[matches.index(max(matches))]
+        return bestmatch
