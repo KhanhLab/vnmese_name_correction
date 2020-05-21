@@ -11,10 +11,16 @@ from sources.vietdict import TiengViet
 from sources.matching import StringMatching
 
 def get_file(directory, test_file):
+    """
+    Import data for batch testing
+    """
     with open(os.path.join(directory, test_file), "rb") as t:
         test = pickle.load(t)
     return test
 def vn_correct(word):
+    """
+    Spelling checking and correction
+    """
     word = word.lower()
     check, mispelling = tv.checkTiengViet(word)
     for m in mispelling:
@@ -22,6 +28,9 @@ def vn_correct(word):
         word = word.replace(m, corrected)
     return word.upper()
 def lastname_match(fullname):
+    """
+    Matching lastname (optional) 
+    """ 
     lastname = fullname.split(' ')[0]
     sm = StringMatching()
     best_match = sm.word_similarity(lastname)
@@ -29,14 +38,25 @@ def lastname_match(fullname):
 
 if __name__=='__main__':
     tv = TiengViet()
-    start = time.time()
-    directory = './data/'
-    test_file = "test.txt"
-    test= get_file(directory, test_file)
-    test['ARS'] = test['PR'] == test['GT'] # Check ARS
-    test['PUNC'] = test['PR'].map(tv.removePunctuation) # Remove punctuation
-    test['CORRECTED_PR'] = test['PUNC'].map(vn_correct) # Spelling correction
-    test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match) # Lastname matching
-    test['MOMO'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
-    test.to_excel('test.xlsx', index = 0)
-    print('Done!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
+    batch = False
+    # Batch test
+    if batch:
+        start = time.time()
+        directory = './data/'
+        test_file = "test.txt"
+        test= get_file(directory, test_file)
+        test['ARS'] = test['PR'] == test['GT'] # Check ARS
+        test['PUNC'] = test['PR'].map(tv.removePunctuation) # Remove punctuation
+        test['CORRECTED_PR'] = test['PUNC'].map(vn_correct) # Spelling correction
+        test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match) # Lastname matching
+        test['MOMO'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
+        test.to_excel('test.xlsx', index = 0)
+        print('Done batch testing!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
+    else:
+        word = input('Input string:')
+        start = time.time()
+        word = tv.removePunctuation(word) # Remove punctuation
+        word = vn_correct(word) # Spelling correction
+        word = lastname_match(word) # Lastname matching
+        print(word)
+        print('Done batch testing!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
