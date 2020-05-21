@@ -4,18 +4,16 @@ Created on 2020-05-15
 """
 
 import os.path
+import time
 import pickle
 import pandas as pd 
-import time
-from vietdict import TiengViet
-from matching import StringMatching
+from sources.vietdict import TiengViet
+from sources.matching import StringMatching
 
-def get_file(directory, test_file, lastname_file):
+def get_file(directory, test_file):
     with open(os.path.join(directory, test_file), "rb") as t:
         test = pickle.load(t)
-    with open(os.path.join(directory, lastname_file), "rb") as l:
-        lastnames_dict = pickle.load(l)
-    return test, lastnames_dict
+    return test
 def vn_correct(word):
     word = word.lower()
     check, mispelling = tv.checkTiengViet(word)
@@ -34,11 +32,11 @@ if __name__=='__main__':
     start = time.time()
     directory = './data/'
     test_file = "test.txt"
-    lastname_file = "last.txt"
-    test, lastnames_dict = get_file(directory, test_file, lastname_file)
-    test['ARS'] = test['PR'] == test['GT']
-    test['CORRECTED_PR'] = test['PR'].map(vn_correct)
-    test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match)
-    test['MOMO'] = test['LASTNAME_PR'] == test['GT']
+    test= get_file(directory, test_file)
+    test['ARS'] = test['PR'] == test['GT'] # Check ARS
+    test['PUNC'] = test['PR'].map(tv.removePunctuation) # Remove punctuation
+    test['CORRECTED_PR'] = test['PUNC'].map(vn_correct) # Spelling correction
+    test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match) # Lastname matching
+    test['MOMO'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
     test.to_excel('test.xlsx', index = 0)
     print('Done!. Time taken = {:.1f}(s) \n'.format(time.time()-start))

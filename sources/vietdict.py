@@ -162,3 +162,7 @@ class TiengViet(object):
         daura = self.correctTiengViet(dauvao[:i]) +' '+ dauvao[i:i+len(longest)] +' '+ self.correctTiengViet(dauvao[i+len(longest):]) 
         return daura.strip()
     
+    def removePunctuation(self, dauvao):
+        return "".join((char if char.isalpha() else " ") for char in dauvao)
+
+    
