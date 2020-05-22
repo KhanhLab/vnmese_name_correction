@@ -40,7 +40,7 @@ def lastname_match(fullname):
 
 if __name__=='__main__':
     tv = TiengViet()
-    batch = False
+    batch = True
     # Batch test: for testing purpose, will be removed soon!
     if batch:
         start = time.time()
@@ -52,8 +52,9 @@ if __name__=='__main__':
         test['CORRECTED_PR'] = test['PUNC'].map(vn_correct) # Spelling correction
         test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match) # Lastname matching
         test['MOMO'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
-        test.to_excel('test.xlsx', index = 0)
-        print('Done batch testing!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
+        save_path = 'C:/Users/khanh.trinh/Desktop/'
+        test.to_excel(os.path.join(save_path, 'result.xlsx'), index = 0)
+        print('Done batch testing!. Time taken = {:.3f}(s) \n'.format(time.time()-start))
     else:
         word = input('Input string:')
         start = time.time()
@@ -61,4 +62,4 @@ if __name__=='__main__':
         word = vn_correct(word) # Spelling correction
         word = lastname_match(word) # Lastname matching
         print(word)
-        print('Done testing!. Time taken = {:.1f}(s) \n'.format(time.time()-start))
+        print('Done testing!. Time taken = {:.3f}(s) \n'.format(time.time()-start))
