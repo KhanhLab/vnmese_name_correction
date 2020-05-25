@@ -40,7 +40,7 @@ def lastname_match(fullname):
 
 if __name__=='__main__':
     tv = TiengViet()
-    batch = True
+    batch = False
     # Batch test: for testing purpose, will be removed soon!
     if batch:
         start = time.time()
