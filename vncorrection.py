@@ -53,7 +53,7 @@ if __name__=='__main__':
         test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match) # Lastname matching
         test['M_RESULT'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
         save_path = ''
-        test.to_excel(os.path.join(save_path, 'result.xlsx'), index = 0)
+        # test.to_excel(os.path.join(save_path, 'result.xlsx'), index = 0)
         print('Done batch testing!. Time taken = {:.3f}(s) \n'.format(time.time()-start))
     else:
         word = input('Input string:')
