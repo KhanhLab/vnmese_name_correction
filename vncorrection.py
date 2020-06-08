@@ -47,12 +47,12 @@ if __name__=='__main__':
         directory = './data/'
         test_file = "test.txt"
         test= get_file(directory, test_file)
-        test['ARS'] = test['PR'] == test['GT'] # Check ARS
+        test['A_RESULT'] = test['PR'] == test['GT'] # Check ARS
         test['PUNC'] = test['PR'].map(tv.removePunctuation) # Remove punctuation
         test['CORRECTED_PR'] = test['PUNC'].map(vn_correct) # Spelling correction
         test['LASTNAME_PR'] = test['CORRECTED_PR'].map(lastname_match) # Lastname matching
-        test['MOMO'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
-        save_path = 'C:/Users/khanh.trinh/Desktop/'
+        test['M_RESULT'] = test['LASTNAME_PR'] == test['GT'] # Check MOMO
+        save_path = ''
         test.to_excel(os.path.join(save_path, 'result.xlsx'), index = 0)
         print('Done batch testing!. Time taken = {:.3f}(s) \n'.format(time.time()-start))
     else:
