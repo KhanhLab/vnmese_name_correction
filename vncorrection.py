@@ -60,6 +60,6 @@ if __name__=='__main__':
         start = time.time()
         word = tv.removePunctuation(word) # Remove punctuation
         word = vn_correct(word) # Spelling correction
-        word = lastname_match(word) # Lastname matching
+        # word = lastname_match(word) # Lastname matching
         print(word)
         print('Done testing!. Time taken = {:.3f}(s) \n'.format(time.time()-start))
