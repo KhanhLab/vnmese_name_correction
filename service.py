@@ -31,7 +31,7 @@ class VNcorrectAPI():
             else:
                 result = {}
                 tv = TiengViet()
-                start = time.time()
+                start = datetime.datetime.now()
                 word = tv.removePunctuation(word) # Remove punctuation
                 word = self.vn_correct(word) # Spelling correction
                 print(word)
